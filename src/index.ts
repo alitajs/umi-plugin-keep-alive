@@ -5,23 +5,24 @@ import { join } from 'path'
 import get from 'lodash/get'
 
 export default (api: IApi) => {
-  // .umi/route.js 中加入 import { AliveScope } from 'react-activation' 语句
+  // .umi/route.js 中加入 import wrapChildrenWithAliveScope from 'umi-plugin-keep-alive/lib/wrapChildrenWithAliveScope' 语句
   api.addRouterImport({
-    source: 'react-activation',
-    specifier: `{ AliveScope }`,
+    source: 'umi-plugin-keep-alive/lib/wrapChildrenWithAliveScope',
+    specifier: `wrapChildrenWithAliveScope`,
   })
 
   // 使 AliveScope 嵌于 Router 与其 children 之间
   const currentModifyRouterRootComponent = api.applyPlugins('modifyRouterRootComponent')
-  api.modifyRouterRootComponent(`
-    ({ children, ...props }) => (
-      <${currentModifyRouterRootComponent} {...props}>
-        <AliveScope>
-          {children}
-        </AliveScope>        
-      </${currentModifyRouterRootComponent}>
-    )
-  `)
+  api.modifyRouterRootComponent(`wrapChildrenWithAliveScope(${currentModifyRouterRootComponent})`)
+
+  // 生成：export * from 'react-activation'
+  // 业务中可 import { KeepAlive } from 'umi'
+  api.addUmiExports([
+    {
+      exportAll: true,
+      source: 'react-activation',
+    },
+  ])
 
   api.modifyAFWebpackOpts(memo => {
     // 探测 tsconfig.json 中的 compilerOptions.jsx 是否为 react
@@ -35,12 +36,12 @@ export default (api: IApi) => {
         ...get(origTsConfig, 'compilerOptions', {}),
         ...get(memo, 'typescript.compilerOptions', {}),
       },
-      ...memo.typescript || {}
+      ...(memo.typescript || {}),
     }
 
     assert(
       get(typescript, 'compilerOptions.jsx') !== 'react',
-      'Will cause unstable `<KeepAlive>` effect while `tsConfig.compilerOptions.jsx` is "react", use "preserve" instead. Ref: https://github.com/CJY0208/react-activation/issues/8'
+      'Will cause unstable `<KeepAlive>` effect while `tsConfig.compilerOptions.jsx` is "react", use "preserve" instead. Ref: https://github.com/CJY0208/react-activation/issues/8',
     )
 
     // 注入 babel 插件 react-activation/babel
@@ -51,13 +52,4 @@ export default (api: IApi) => {
       extraBabelPlugins,
     }
   })
-
-  // 生成：export * from 'react-activation'
-  // 业务中可 import { KeepAlive } from 'umi'
-  api.addUmiExports([
-    {
-      exportAll: true,
-      source: 'react-activation',
-    },
-  ])
 }
