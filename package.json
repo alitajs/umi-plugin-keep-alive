@@ -6,7 +6,7 @@
     "name": "xiaohuoni",
     "email": "448627663@qq.com"
   },
-  "repository": "alitajs/keep-alive",
+  "repository": "alitajs/umi-plugin-keep-alive",
   "peerDependencies": {
     "antd": "4.x",
     "umi": "2.x || ^2.9.0-0"
