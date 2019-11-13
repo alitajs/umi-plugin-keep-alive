@@ -54,6 +54,22 @@
     }
     ```
 
+## Typescript
+
+If you are using `Typescript`, make sure that `tsConfig.compilerOptions.jsx` is "preserve",
+
+Will cause unstable `<KeepAlive>` effect while `tsConfig.compilerOptions.jsx` is "react", use "preserve" instead. 
+
+Ref: https://github.com/CJY0208/react-activation/issues/8
+
+```json
+{
+  "compilerOptions": {
+      "jsx": "preserve"
+  }
+}
+```
+
 ## Options
 
 TODO
