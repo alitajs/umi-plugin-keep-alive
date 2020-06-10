@@ -1,6 +1,6 @@
 {
   "name": "umi-plugin-keep-alive",
-  "version": "0.0.1-beta.7",
+  "version": "0.0.1-beta.9",
   "description": "<KeepAlive> for umi base on react-activation",
   "authors": [
     "xiaohuoi <448627663@qq.com>",
@@ -8,7 +8,7 @@
   ],
   "repository": "alitajs/umi-plugin-keep-alive",
   "peerDependencies": {
-    "umi": "3,x"
+    "umi": "3.x"
   },
   "main": "lib/index.js",
   "scripts": {
