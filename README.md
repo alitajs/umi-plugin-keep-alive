@@ -7,15 +7,12 @@
 
 ## Usage
 
-1. Configure in `.umirc.js` or `.umirc.ts`
-
-    **MUST** place after `umi-plugin-react` or `umi-plugin-dva`
+1. Configure in `.umirc.ts`
 
     ```javascript
     export default {
       plugins: [
-        ['umi-plugin-react', ...],
-        'umi-plugin-keep-alive', // MUST place after umi-plugin-react or umi-plugin-dva
+        'umi-plugin-keep-alive',
       ],
     }
     ```
@@ -53,22 +50,6 @@
       )
     }
     ```
-
-## Typescript
-
-If you are using `Typescript`, make sure that `tsConfig.compilerOptions.jsx` is "preserve",
-
-Will cause unstable `<KeepAlive>` effect while `tsConfig.compilerOptions.jsx` is "react", use "preserve" instead. 
-
-Ref: https://github.com/CJY0208/react-activation/issues/8
-
-```json
-{
-  "compilerOptions": {
-      "jsx": "preserve"
-  }
-}
-```
 
 ## Options
 

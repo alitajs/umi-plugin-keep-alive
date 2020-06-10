@@ -1,38 +1,30 @@
 {
   "name": "umi-plugin-keep-alive",
-  "version": "0.0.1-beta.6",
+  "version": "0.0.1-beta.9",
   "description": "<KeepAlive> for umi base on react-activation",
-  "authors": {
-    "name": "xiaohuoni",
-    "email": "448627663@qq.com"
-  },
+  "authors": [
+    "xiaohuoi <448627663@qq.com>",
+    "CJY <375564567@qq.com>"
+  ],
   "repository": "alitajs/umi-plugin-keep-alive",
   "peerDependencies": {
-    "antd": "4.x",
-    "umi": "2.x || ^2.9.0-0"
+    "umi": "3.x"
   },
   "main": "lib/index.js",
   "scripts": {
-    "start": "CURRENT_PROJECT=example umi ui",
     "build": "father-build",
     "prepublishOnly": "npm run build && np --no-cleanup --yolo --no-publish"
   },
   "devDependencies": {
     "father-build": "^1.8.0",
-    "np": "^5.0.3",
-    "umi": "^2.9.0-beta.6",
-    "umi-types": "0.5.4"
+    "np": "^5.0.3"
   },
   "files": [
-    "dist",
     "lib",
-    "src",
-    "template"
+    "src"
   ],
   "license": "MIT",
   "dependencies": {
-    "assert": "^2.0.0",
-    "lodash": "^4.17.15",
-    "react-activation": "^0.3.2"
+    "react-activation": "^0.5.0"
   }
 }
