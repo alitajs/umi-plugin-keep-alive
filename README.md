@@ -7,14 +7,12 @@
 
 ## Usage
 
-1. Configure in `.umirc.ts`
+1. Install
 
-    ```javascript
-    export default {
-      plugins: [
-        'umi-plugin-keep-alive',
-      ],
-    }
+    ```bash
+    npm install umi-plugin-keep-alive --save
+    # or
+    yarn add umi-plugin-keep-alive
     ```
 
 2. export `KeepAlive` from umi and wrap any component you want to be keeped  
