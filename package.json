@@ -13,7 +13,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "father-build",
-    "manual:publish": "npm run build && np --no-cleanup --yolo --no-publish && npm publish"
+    "prepublishOnly": "npm run build && np --no-cleanup --yolo --no-publish"
   },
   "devDependencies": {
     "father-build": "^1.8.0",
