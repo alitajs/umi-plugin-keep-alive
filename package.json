@@ -1,6 +1,6 @@
 {
   "name": "umi-plugin-keep-alive",
-  "version": "0.0.1-beta.10",
+  "version": "0.0.1-beta.11",
   "description": "<KeepAlive> for umi base on react-activation",
   "authors": [
     "xiaohuoi <448627663@qq.com>",
@@ -13,7 +13,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "father-build",
-    "prepublishOnly": "npm run build && np --no-cleanup --yolo --no-publish"
+    "manual:publish": "npm run build && np --no-cleanup --yolo --no-publish && npm publish"
   },
   "devDependencies": {
     "father-build": "^1.8.0",
@@ -25,6 +25,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "react-activation": "^0.5.0"
+    "react-activation": "^0.5.2"
   }
 }
