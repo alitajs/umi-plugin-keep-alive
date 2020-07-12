@@ -15,7 +15,7 @@ NodeKey.defaultProps.onHandleNode = (node, mark) => {
 
 function AliveScopeContainer({ children, history, ...renderRoutesProps }: any) {
   const useRouterComponent = useMemo(() => typeof isBrowser !== 'function' || isBrowser() ? children.type : () => null, []);
-  useRouterComponent({ history, ...renderRoutesProps });
+  useRouterComponent({ history, ...children.props, ...renderRoutesProps });
 
   return (
     <Router history={history}>
