@@ -15,6 +15,16 @@
     "build": "father-build",
     "prepublishOnly": "npm run build && np --no-cleanup --yolo --no-publish"
   },
+  "keywords": [
+    "React Keep Alive",
+    "Keep Alive",
+    "keep-alive",
+    "KeepAlive",
+    "activation",
+    "react cache",
+    "umi keep alive",
+    "umijs"
+  ],
   "devDependencies": {
     "father-build": "^1.8.0",
     "np": "^5.0.3"
