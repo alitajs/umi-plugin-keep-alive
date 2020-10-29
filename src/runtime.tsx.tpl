@@ -24,7 +24,7 @@ function AliveRouterComponent({ children, history, ...renderProps }: any) {
   useEffect(() => {
     // first time using window.g_initialProps
     // switch route fetching data, if exact route reset window.getInitialProps
-    if ((window as any).g_initialProps) {
+    if (typeof window !== 'undefined' && (window as any).g_initialProps) {
       (window as any).g_initialProps = null;
     }
     function routeChangeHandler(location: any, action?: string) {
