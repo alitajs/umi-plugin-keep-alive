@@ -45,6 +45,6 @@ jobs:
       if: steps.check.outputs.changed == 'true'
       uses: pascalgn/npm-publish-action@1.2.0
       with:
-        commit_pattern: "^release:"
+        commit_pattern: "^Release (\\S+)"
       env:
         NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
