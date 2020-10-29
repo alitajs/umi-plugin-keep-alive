@@ -1,6 +1,6 @@
 {
   "name": "umi-plugin-keep-alive",
-  "version": "0.0.1-beta.16",
+  "version": "0.0.1-beta.17",
   "description": "<KeepAlive> for umi base on react-activation",
   "authors": [
     "xiaohuoi <448627663@qq.com>",
