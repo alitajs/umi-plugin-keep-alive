@@ -3,15 +3,17 @@
 [![NPM version](https://img.shields.io/npm/v/umi-plugin-keep-alive.svg?style=flat)](https://npmjs.org/package/umi-plugin-keep-alive)
 [![NPM downloads](http://img.shields.io/npm/dm/umi-plugin-keep-alive.svg?style=flat)](https://npmjs.org/package/umi-plugin-keep-alive)
 
-`<KeepAlive>` for umijs base on [react-activation](https://github.com/CJY0208/react-activation)
+此 `<KeepAlive>` 功能基于 [react-activation](https://github.com/CJY0208/react-activation/blob/master/README_CN.md)
 
-## Online Demo
+[English](./README_EN.md) | 中文说明
+
+## 在线示例
 
 https://codesandbox.io/s/umi-keep-alive-tabs-demo-knfxy
 
-## Usage
+## 使用方法
 
-1. Install
+1. 安装
 
     ```bash
     npm install umi-plugin-keep-alive --save
@@ -19,7 +21,7 @@ https://codesandbox.io/s/umi-keep-alive-tabs-demo-knfxy
     yarn add umi-plugin-keep-alive
     ```
 
-2. export `KeepAlive` from umi and wrap any component you want to be keeped  
+2. 从 `umi` 中导出 `KeepAlive`，包裹在需要被缓存的组件上
 
     ```javascript
     import { useState } from 'react'
@@ -53,13 +55,9 @@ https://codesandbox.io/s/umi-keep-alive-tabs-demo-knfxy
     }
     ```
 
-## Options
+## 文档
 
-TODO
-
-## Documentation
-
-All function of react-activation can be completely imported from umi
+所有来自 [react-activation](https://github.com/CJY0208/react-activation/blob/master/README_CN.md) 都可以由 `umi` 导出
 
 ```javascript
 import {
@@ -72,7 +70,7 @@ import {
 } from 'umi'
 ```
 
-Visit [react-activation](https://github.com/CJY0208/react-activation) for full documentation
+访问 [react-activation](https://github.com/CJY0208/react-activation/blob/master/README_CN.md) 查阅完整的文档
 
 ## LICENSE
 
