@@ -1,15 +1,15 @@
 # umi-plugin-keep-alive
 
+中文说明 | [English](./README_EN.md)
+
 [![NPM version](https://img.shields.io/npm/v/umi-plugin-keep-alive.svg?style=flat)](https://npmjs.org/package/umi-plugin-keep-alive)
 [![NPM downloads](http://img.shields.io/npm/dm/umi-plugin-keep-alive.svg?style=flat)](https://npmjs.org/package/umi-plugin-keep-alive)
 
 此 `<KeepAlive>` 功能基于 [react-activation](https://github.com/CJY0208/react-activation/blob/master/README_CN.md)
 
-[English](./README_EN.md) | 中文说明
-
 ## 在线示例
 
-https://codesandbox.io/s/umi-keep-alive-tabs-demo-knfxy
+umi 多 tabs 示例：https://codesandbox.io/s/umi-keep-alive-tabs-demo-knfxy
 
 ## 使用方法
 
