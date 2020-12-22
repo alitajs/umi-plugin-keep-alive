@@ -5,6 +5,10 @@
 
 `<KeepAlive>` for umijs base on [react-activation](https://github.com/CJY0208/react-activation)
 
+## Online Demo
+
+https://codesandbox.io/s/umi-keep-alive-tabs-demo-knfxy
+
 ## Usage
 
 1. Install
