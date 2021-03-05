@@ -23,7 +23,8 @@
     "activation",
     "react cache",
     "umi keep alive",
-    "umijs"
+    "umijs",
+    "cache"
   ],
   "devDependencies": {
     "father-build": "^1.8.0"
