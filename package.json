@@ -1,6 +1,6 @@
 {
   "name": "umi-plugin-keep-alive",
-  "version": "0.0.1-beta.22",
+  "version": "0.0.1-beta.23",
   "description": "<KeepAlive> for umi base on react-activation",
   "authors": [
     "xiaohuoi <448627663@qq.com>",
@@ -34,7 +34,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "react-activation": "^0.8.0",
+    "react-activation": "^0.8.1",
     "react-router-config": "^5.1.1",
     "@umijs/renderer-react": "^3.2.9"
   }
