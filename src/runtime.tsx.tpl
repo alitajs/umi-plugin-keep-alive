@@ -12,8 +12,20 @@ NodeKey.defaultProps.onHandleNode = (node, mark) => {
   return mark;
 };
 
-export function rootContainer(container: React.ReactNode, clientProps: any) {    
-  return (
-    <AliveScope>{container}</AliveScope>
-  );
+// 兼容因使用 rootContainer 导致 access 权限无效问题 (传入 routes 带有 unaccessible 才能成功)
+const Wrapper = ({ children, routes }) => (
+	<AliveScope>
+		{React.cloneElement(children, {	...children.props, routes })}
+	</AliveScope>
+);
+
+export function rootContainer(container: React.ReactNode, clientProps: any) {
+  return React.createElement(Wrapper, null, container);
 }
+
+// 源代码
+// export function rootContainer(container: React.ReactNode, clientProps: any) {
+//   return (
+//     <AliveScope>{container}</AliveScope>
+//   );
+// }
