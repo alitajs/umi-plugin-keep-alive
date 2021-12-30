@@ -13,19 +13,10 @@ NodeKey.defaultProps.onHandleNode = (node, mark) => {
 };
 
 // 兼容因使用 rootContainer 导致 access 权限无效问题 (传入 routes 带有 unaccessible 才能成功)
-const Wrapper = ({ children, routes }) => (
-	<AliveScope>
-		{React.cloneElement(children, {	...children.props, routes })}
-	</AliveScope>
+const Wrapper = ({ children, ...props }) => (
+  React.createElement(AliveScope, null, React.cloneElement(children, {	...children.props, ...props }))
 );
 
-export function rootContainer(container: React.ReactNode, clientProps: any) {
+export function rootContainer(container: React.ReactNode) {
   return React.createElement(Wrapper, null, container);
 }
-
-// 源代码
-// export function rootContainer(container: React.ReactNode, clientProps: any) {
-//   return (
-//     <AliveScope>{container}</AliveScope>
-//   );
-// }
