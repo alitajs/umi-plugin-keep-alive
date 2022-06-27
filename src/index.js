@@ -36,7 +36,7 @@ export default (api) => {
   //   }
 
   // Babel Plugin for react-activation
-  const babelOpt = [[require.resolve('react-activation/babel')]]
+  const babelOpt = [require.resolve('react-activation/babel')]
   if (api.modifyBabelOpts && typeof api.modifyBabelOpts === 'function') {
     api.modifyBabelOpts((babelOpts) => {
       babelOpts.plugins.push(babelOpt)
@@ -45,7 +45,7 @@ export default (api) => {
   }
 
   if (api.addExtraBabelPlugins && typeof api.addExtraBabelPlugins === 'function') {
-    api.addExtraBabelPlugins(() => babelOpt)
+    api.addExtraBabelPlugins(() => [babelOpt])
   }
   // 生成：export * from 'react-activation'
   // TODO: 指明支持的 api，使用上述方式存在 bug https://github.com/guybedford/es-module-lexer/issues/76
