@@ -36,11 +36,17 @@ export default (api) => {
   //   }
 
   // Babel Plugin for react-activation
-  api.modifyBabelOpts((babelOpts) => {
-    babelOpts.plugins.push([require.resolve('react-activation/babel')])
-    return babelOpts
-  })
+  const babelOpt = [[require.resolve('react-activation/babel')]]
+  if (api.modifyBabelOpts && typeof api.modifyBabelOpts === 'function') {
+    api.modifyBabelOpts((babelOpts) => {
+      babelOpts.plugins.push(babelOpt)
+      return babelOpts
+    })
+  }
 
+  if (api.addExtraBabelPlugins && typeof api.addExtraBabelPlugins === 'function') {
+    api.addExtraBabelPlugins(() => babelOpt)
+  }
   // 生成：export * from 'react-activation'
   // TODO: 指明支持的 api，使用上述方式存在 bug https://github.com/guybedford/es-module-lexer/issues/76
   // 业务中可 import { KeepAlive } from 'umi'
@@ -52,7 +58,7 @@ export default (api) => {
         'useUnactivate',
         'withActivation',
         'withAliveScope',
-        'useAliveController'
+        'useAliveController',
       ],
       source: 'react-activation',
     },
