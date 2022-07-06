@@ -8,7 +8,7 @@
   ],
   "repository": "alitajs/umi-plugin-keep-alive",
   "peerDependencies": {
-    "umi": "3.x"
+    "umi": "3.x || 4.x"
   },
   "main": "lib/index.js",
   "scripts": {
