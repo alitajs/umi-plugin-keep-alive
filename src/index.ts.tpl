@@ -1,1 +1,1 @@
-export { KeepAlive, useActivate, useUnactivate, withActivation, withAliveScope, useAliveController } from 'react-activation';
+export { KeepAlive, useActivate, useUnactivate, withActivation, withAliveScope, useAliveController, autoFixContext } from 'react-activation';

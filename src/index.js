@@ -85,6 +85,7 @@ export default (api) => {
       specifiers: [
         'KeepAlive',
         'useActivate',
+        'autoFixContext',
         'useUnactivate',
         'withActivation',
         'withAliveScope',
