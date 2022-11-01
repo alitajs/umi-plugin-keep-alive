@@ -35,6 +35,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "react-activation": "^0.11.2"
+    "react-activation": "^0.12.1"
   }
 }
